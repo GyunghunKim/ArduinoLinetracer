@@ -232,7 +232,6 @@ void loop() {
 	} 
 	//오른쪽 갈림길만 있는 경우
 	else if (sensorStatus == (SENSOR_R | SENSOR_F)) {
-		//roll(FOWARD, TURNSPEED, TICK/2);
 		goStraight(RIGHT);
 		return;
 	} 
@@ -245,11 +244,9 @@ void loop() {
 
 	//직진
 	if (sensorStatus & SENSOR_L) {
-		//roll(FOWARD, TURNSPEED, TICK/2);
 		roll(LEFT, TURNSPEED, TICK);
 		delay(TOCK);
 	} else if (sensorStatus & SENSOR_R) {
-		//roll(FOWARD, TURNSPEED, TICK/2);
 		roll(RIGHT, TURNSPEED, TICK);
 		delay(TOCK);
 	} else if (sensorStatus & SENSOR_F) {
